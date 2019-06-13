@@ -29,6 +29,6 @@ def how_many_ways(digitarray):
             dp.append(1)
         else:
             dp.append(dp[i-1])
-        if i>1 and (s[i-2]=="1" or (s[i-2]=="2" and s[i-1]<="5")):
+        if i>1 and (digitarray[i-2]=="1" or (digitarray[i-2]=="2" and digitarray[i-1]<="5")):
             dp[i] += dp[i-2]
     return dp[-1]
