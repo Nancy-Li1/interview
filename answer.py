@@ -25,10 +25,10 @@ def how_many_ways(digitarray):
         return 1
     dp = [1]
     for i in range(1, length + 1):
-        if digitarray[i-1] == '0':
-            dp.append(1)
-        else:
-            dp.append(dp[i-1])
+        # if digitarray[i-1] == '0':
+        #     dp.append(1)
+        # else:
+        dp.append(dp[i-1])
         if i>1 and (digitarray[i-2]=="1" or (digitarray[i-2]=="2" and digitarray[i-1]<="5")):
             dp[i] += dp[i-2]
     return dp[-1]
